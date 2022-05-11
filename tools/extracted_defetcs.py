@@ -1,5 +1,6 @@
 import cv2
 import os
+import glob
 from tools import config
 
 def main():
