@@ -8,10 +8,10 @@ def get_lambda(measures):
                  (g1 * g2 + g2 * g3 + g1 * g3) * x ** 2 + 
                  (g1 + g2 + g3 - 1) * x, x)
     
-    return lmbd[2]
+    return lmbd[1]
 
 def choquet_fuzzy_integral(X, lmbd):
-    sorted_data = np.sort(X, order="prediction_score")
+    sorted_data = np.sort(X, order="prediction_score")[::-1]
     f_prev = sorted_data[0][1]
     pred = sorted_data[0][0] * sorted_data[0][1]
     

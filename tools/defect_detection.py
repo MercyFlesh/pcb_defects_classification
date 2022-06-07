@@ -23,7 +23,6 @@ def get_defects_list(test_name, temp_name):
     difference = cv2.bitwise_xor(img_test, img_temp, mask=None)
     substractGray = cv2.cvtColor(difference, cv2.COLOR_BGR2GRAY)
     _, mask = cv2.threshold(substractGray, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
-    
     test_copy[mask != 255] = [0, 255, 0]
     hsv = cv2.cvtColor(test_copy, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv, (36, 0, 0), (70, 255,255))
